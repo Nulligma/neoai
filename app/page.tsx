@@ -9,7 +9,7 @@ export default async function Home() {
   console.log("hello");
   return (
     <main className={montserrat.className}>
-      {movies.results.map((e: Movie) => (
+      {movies && movies.results.map((e: Movie) => (
         <MovieCard key={e.id} data={e} />
       ))}
     </main>
