@@ -1,4 +1,7 @@
 import Link from "next/link";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./Navbar";
+import ThemeChanger from "./ThemeChanger";
 
 export const metadata = {
   title: "Create Next App",
@@ -12,21 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>Project</li>
-            <li>Contact</li>
-            <li>Theme</li>
-          </ul>
-        </nav>
+      <body data-bs-theme="dark">
+        <ThemeChanger/>
+        <Navbar />
         {children}
+        <footer className="container pt-3 mt-4 text-body-secondary border-top">
+          © 2023
+        </footer>
       </body>
     </html>
   );
